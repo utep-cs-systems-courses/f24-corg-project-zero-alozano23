@@ -3,9 +3,9 @@
 
 void print_char_5x7(char c)
 {
-  c -= 0x20;
-  for (char col = 0; col < 5; col++) {
-    for (char row = 0; row < 7; row++) {
+  c -= 0x20; //32 in decimal, 10 0000 in binary
+  for (char col = 0; col < 5; col++) { //length
+    for (char row = 0; row < 7; row++) { //width
       unsigned short rowBits = font_5x7[c][col];
       unsigned short colMask = 1 << (6-row); /* mask to select bit associated with bit */
       putchar( (rowBits & colMask) ? '*' : ' ');
@@ -13,4 +13,18 @@ void print_char_5x7(char c)
     putchar('\n');
   }
   putchar('\n');
+}
+
+void print_char_8x12(char c){
+	c -= 0x20;
+	for (char col = 0; col < 8; col++){
+		for (char row = 0; row < 12; row++){
+			unsigned short rowBits = font_8x12[c][col];
+			unsigned short colMask = 1 << (11-row);
+			putchar( (rowBits & colMask) ? '*': ' ');
+		}
+		putchar('\n');
+	}
+	putchar('\n');
+
 }

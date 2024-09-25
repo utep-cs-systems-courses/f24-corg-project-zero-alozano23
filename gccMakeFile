@@ -1,7 +1,7 @@
 #comments begin with #
 
 # For convenience, define variable $(OBJS) to list of object files
-OBJS = draw_shapes.o draw_chars.o 5x7-font.o uimain.o
+OBJS = draw_shapes.o draw_chars.o 8x12-font.o 5x7-font.o uimain.o
 
 # Compiler flags for debugging and optimization
 CFLAGS = -g -O3  # -g for debug, -O3 for optimization
@@ -23,7 +23,8 @@ draw_chars.o: draw_chars.c draw.h
 
 5x7-font.o: 5x7-font.c draw.h
 	gcc $(CFLAGS) -c 5x7-font.c -o 5x7-font.o
-
+8x12-font.o: 8x12-font.o draw.h
+	gcc $(CFLAGS) -c 8x12-font.c -o 8x12-font.o
 uimain.o: uimain.c draw.h
 	gcc $(CFLAGS) -c uimain.c -o uimain.o
 
