@@ -14,19 +14,6 @@ void print_square(int leftCol, int size)
   }
 }
 
-void print_square_horizontal(int leftCol, int size){
-	int endCol = leftCol + size;
-	for(int col = 0; col < size; col++){
-		int row;
-		for(row = 0; row < leftCol; row++){
-			putchar(' ');
-		}
-		for(	; row < endCol; row++){
-			putchar('*');
-		}
-		putchar('\n');
-	}
-}
 
 // Prints a triangle of specified height whose left edge is at col leftCol.
 void print_triangle(int leftCol, int size)
@@ -41,12 +28,11 @@ void print_triangle(int leftCol, int size)
 }
 
 void print_arrow(int rectCol, int triCol, int size){
-	int rectRow = rectCol/2;
+        int shaftWidth = rectCol/3; 
 	print_triangle(triCol, size);
-	if(rectCol >= triCol){print_square(triCol+size-(size/2), rectRow);}
-	else{print_square(rectCol+(triCol + size)-(rectRow/2), rectRow);}
-	//print_square(rectRow+size-(rectRow/2), rectCol);
-	//putchar('\n');
-	//print_square_horizontal(rectCol+size-(rectRow/2), rectRow);
+	//if(rectCol >= triCol){print_square(triCol, shaftWidth);}
+	//else{print_square(rectCol+(triCol + size)-(shaftWidth/2), shaftWidth);}
+	print_square(triCol+size-(shaftWidth*0.67), rectCol);
+        
 }
 
