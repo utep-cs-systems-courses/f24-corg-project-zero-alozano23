@@ -90,3 +90,5 @@ Please observe the following standard C coding practices:
  - able to use make & understand and modify Makefiles 
  - abile to understand and modify simple programs written in C
 
+PLEASE LOOK AT THE OTHER BRANCH. I CANNOT MERGE THE BRANCHES DUE TO LACK OF
+PERMISSION. thank you...Also there is a gcc version of the Makefile
